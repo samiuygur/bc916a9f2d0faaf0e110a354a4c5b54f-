@@ -1,10 +1,6 @@
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-const Header = () => {
-
-    const makeNewReservation = () => {
-        localStorage.clear();
-    }
+import ReservationButton from '../toolbox/ReservationButton';
+const Header = ({newReservation}) => {
 
     return (
         <header>
@@ -16,9 +12,7 @@ const Header = () => {
                     </div>
                 </Grid>
                 <Grid item  >
-                    <Button variant="contained" color="default" onClick={makeNewReservation}>
-                        Yeni Rezervasyon yap
-                    </Button>
+                    <ReservationButton name="Yeni Rezervasyon Yap" onClick={newReservation} />
                 </Grid>
             </Grid>
         </header>

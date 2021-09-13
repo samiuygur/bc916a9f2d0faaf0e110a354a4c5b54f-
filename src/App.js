@@ -145,14 +145,15 @@ function App() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  // const handleReset = () => {
-  //   setActiveStep(0);
-  // };
+  function newReservation() {
+    localStorage.clear();
+    setActiveStep(0);
+  }
 
   return (
     <div className="App">
       <Container maxWidth="lg">
-        <Header />
+        <Header newReservation={newReservation} />
         <div className={classes.root}>
           <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />} className="reservation-steps">
             {steps.map((label) => (
@@ -164,7 +165,7 @@ function App() {
           <div className="step-content-wrapper">
             {activeStep === steps.length ? (
               <div>
-                <ReservationSuccess />
+                <ReservationSuccess newReservation={newReservation} />
               </div>
             ) : (
               <div>
