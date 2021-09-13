@@ -34,6 +34,7 @@ export default class PreviewAndPayment extends React.Component {
         const { name, value } = e.target;
 
         this.setState({ [name]: value });
+        localStorage.setItem(name, value);
     }
 
     getStorageData = () => {
@@ -93,7 +94,7 @@ export default class PreviewAndPayment extends React.Component {
                             </Grid>
                             <Grid container spacing={5}>
                                 <Grid item sm={6}>
-                                    <InputMask mask="99/99" onChange={this.handleInputChange} onFocus={this.handleInputFocus}>
+                                    <InputMask mask="99/9999" onChange={this.handleInputChange} onFocus={this.handleInputFocus}>
                                         {(inputProps) => <TextField required name="expiry" type="text" id="card-number" label="Kart Son Kullanma Tarihi" className="payment-input" placeholder="Son Kullanma Tarihini Giriniz" />}
                                     </InputMask>
                                 </Grid>

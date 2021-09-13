@@ -9,10 +9,3 @@ export const getHotels = () => dispatch => {
     .then(response => dispatch({ type: actionTypes.GET_HOTELS_SUCCESS, payload: response.data}))
     .catch(error => dispatch({ type: actionTypes.GET_HOTELS_ERROR, payload: error}));
 }
-
-export const makeReservation = () => {
-    return {
-        type: actionTypes.MAKE_RESERVATION_SUCCESS,
-        payload: 'pay'
-      }
-}

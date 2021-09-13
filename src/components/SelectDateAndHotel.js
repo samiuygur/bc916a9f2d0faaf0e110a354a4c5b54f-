@@ -168,7 +168,6 @@ function SelectDateAndHotel(props) {
 const mapStateToProps = state => {
   return {
     hotels: state.getHotelsReducer.hotels,
-    reservation: state.formReducer
   }
 }
 

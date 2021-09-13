@@ -24,10 +24,11 @@ const ReservationSummary = ({layout}) => {
         setHotelInfo(dateAndhotelInfo)
     }, [])
 
-    const totalPrize = (hotelInfo.roomPrice * hotelInfo.dayDiff) + (hotelInfo.roomPrice * hotelInfo.dayDiff * hotelInfo.priceRate) / 100
+    const totalPrice = (hotelInfo.roomPrice * hotelInfo.dayDiff) + (hotelInfo.roomPrice * hotelInfo.dayDiff * hotelInfo.priceRate) / 100;
+    localStorage.setItem('totalPrice', totalPrice.toFixed(2))
 
     return (
-        <Grid item sm={layout} style={{ backgroundColor: '#ccc', borderRadius: '10px', padding: '20px' }}>
+        <Grid item sm={parseInt(layout)} style={{ backgroundColor: '#ccc', borderRadius: '10px', padding: '20px' }}>
             <Grid container spacing={3} alignItems="center" justifyContent="center">
                 <Grid item sm={6}>
                     <Card style={{ textAlign: 'center' }}>
@@ -111,20 +112,20 @@ const ReservationSummary = ({layout}) => {
                 <Card className="price-summary">
                     <CardContent>
                         <Grid container  >
-                            <Grid item sm="6"><Typography gutterBottom variant="h6">Oda Fiyatı</Typography></Grid>
-                            <Grid item sm="6" style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">{hotelInfo.roomPrice} TL</Typography></Grid>
+                            <Grid item sm={6}><Typography gutterBottom variant="h6">Oda Fiyatı</Typography></Grid>
+                            <Grid item sm={6} style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">{hotelInfo.roomPrice} TL</Typography></Grid>
                         </Grid>
                         <Grid container  >
-                            <Grid item sm="6"><Typography gutterBottom variant="h6">Fiyat Etki Oranı</Typography></Grid>
-                            <Grid item sm="6" style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">% {hotelInfo.priceRate}</Typography></Grid>
+                            <Grid item sm={6}><Typography gutterBottom variant="h6">Fiyat Etki Oranı</Typography></Grid>
+                            <Grid item sm={6} style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">% {hotelInfo.priceRate}</Typography></Grid>
                         </Grid>
                         <Grid container  >
-                            <Grid item sm="6"><Typography gutterBottom variant="h6">Konaklama({hotelInfo.dayDiff} Gün)</Typography></Grid>
-                            <Grid item sm="6" style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">{hotelInfo.roomPrice * hotelInfo.dayDiff} TL</Typography></Grid>
+                            <Grid item sm={6}><Typography gutterBottom variant="h6">Konaklama({hotelInfo.dayDiff} Gün)</Typography></Grid>
+                            <Grid item sm={6} style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">{hotelInfo.roomPrice * hotelInfo.dayDiff} TL</Typography></Grid>
                         </Grid>
                         <Grid container  >
-                            <Grid item sm="6"><Typography gutterBottom variant="h6">İndirim</Typography></Grid>
-                            <Grid item sm="6" style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">-100 TL</Typography></Grid>
+                            <Grid item sm={6}><Typography gutterBottom variant="h6">İndirim</Typography></Grid>
+                            <Grid item sm={6} style={{ textAlign: 'right' }}><Typography gutterBottom variant="h6">-100 TL</Typography></Grid>
                         </Grid>
                     </CardContent>
                 </Card>
@@ -133,7 +134,7 @@ const ReservationSummary = ({layout}) => {
                 <Card className="price-summary total" style={{ textAlign: 'center' }}>
                     <CardContent>
                         <Typography gutterBottom variant="h4">TOPLAM TUTAR</Typography>
-                        <Typography gutterBottom variant="h2">{totalPrize.toFixed(2)} TL</Typography>
+                        <Typography gutterBottom variant="h2">{totalPrice.toFixed(2)} TL</Typography>
                     </CardContent>
                 </Card>
             </Grid>
