@@ -8,14 +8,18 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Moment from 'react-moment';
+import { getHotels } from '../redux/actions';
+import { connect } from 'react-redux'
 
 import axios from 'axios';
 
-function SelectRoomAndView() {
+function SelectRoomAndView(props) {
 
   const hotelDetailUrl = 'https://5f6d939160cf97001641b049.mockapi.io/tkn/hotel-details';
   const [hotelDetails, setHotelDetails] = useState([]);
   const [hotelInfo, setHotelInfo] = useState([]);
+  const { getHotels } = props;
+
   useEffect(() => {
     axios.get(hotelDetailUrl).then(response => response.data)
       .then((data) => {
@@ -29,8 +33,10 @@ function SelectRoomAndView() {
       adultCount: localStorage.getItem('adultCount'),
       childCount: localStorage.getItem('childCount'),
     }
-    setHotelInfo(dateAndhotelInfo)
-  }, [])
+    setHotelInfo(dateAndhotelInfo);
+
+    getHotels();
+  }, [getHotels])
 
   const handleRoomSelect = (type, price, event) => {
     event.currentTarget.classList.toggle('selected');
@@ -61,7 +67,7 @@ function SelectRoomAndView() {
     <div>
       <Grid container style={{ backgroundColor: '#ccc', padding: '10px', marginBottom: '30px' }}>
         <Grid item xs={12}>
-          <Typography gutterBottom variant="h4">{hotelInfo.hotelId}</Typography>
+          <Typography gutterBottom variant="h4">{props.hotels.filter((hotel) => parseInt(hotel.id) === parseInt(hotelInfo.hotelId)).map(hotelName => hotelName.hotel_name)}</Typography>
         </Grid>
         <Grid item>
           <Typography variant="subtitle2">
@@ -164,4 +170,10 @@ function SelectRoomAndView() {
   )
 }
 
-export default SelectRoomAndView
+const mapStateToProps = state => {
+  return {
+    hotels: state.getHotelsReducer.hotels,
+  }
+}
+
+export default connect(mapStateToProps, { getHotels })(SelectRoomAndView)

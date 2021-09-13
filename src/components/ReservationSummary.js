@@ -133,7 +133,7 @@ const ReservationSummary = ({layout}) => {
                 <Card className="price-summary total" style={{ textAlign: 'center' }}>
                     <CardContent>
                         <Typography gutterBottom variant="h4">TOPLAM TUTAR</Typography>
-                        <Typography gutterBottom variant="h2">{totalPrize} TL</Typography>
+                        <Typography gutterBottom variant="h2">{totalPrize.toFixed(2)} TL</Typography>
                     </CardContent>
                 </Card>
             </Grid>
