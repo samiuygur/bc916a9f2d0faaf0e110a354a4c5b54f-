@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+}
+header {
+    padding: 15px 30px;
+    background-color: #004999;
+
+    .MuiButton-contained {
+        margin-top: 20px;
+    }
+}
+
+.logo {
+    color: #fff;
+    font-family: Roboto;
+
+    span {
+        display: block;
+        &:first-child {
+            font-size: 45px;
+            font-weight: 800;
+        }
+
+        &:last-child {
+            font-size: 18px;
+        }
+    }
+}
+
+.reservation-steps {
+    background-color: #dedede !important;
+    margin: 50px 0;
+    border-radius: 4px;
+}
+
+.step-content-wrapper {
+    border: 1px solid #ccc;
+    padding: 30px;
+}
+
+.select-hotel {
+    margin-bottom: 50px;
+}
+
+.select-date, .select-person {
+    width: 100%;
+}
+
+.step-buttons {
+    padding: 10px 20px;
+    background-color: #dedede;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-input {
+    width: 100%;
+
+    .MuiInput-root {
+        width: 100%;
+    }
+
+    .MuiFormControl-root {
+        margin-bottom: 15px;
+    }
+
+}
+
+
+.rccs {
+    margin-bottom: 30px;
+}
+
+
+.selected {
+    border: 4px solid green !important;
+}
+
+.price-summary {
+    width: 100%;
+    margin-top: 20px;
+
+    &.total {
+        margin-top: 1px;
+        padding-top: 20px;
+    }
+
+    h4, h2 {
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+}
