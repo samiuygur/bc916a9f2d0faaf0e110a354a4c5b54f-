@@ -30,7 +30,7 @@ const ReservationSummary = ({layout}) => {
     return (
         <Grid item sm={parseInt(layout)} style={{ backgroundColor: '#ccc', borderRadius: '10px', padding: '20px' }}>
             <Grid container spacing={3} alignItems="center" justifyContent="center">
-                <Grid item sm={6}>
+                <Grid item sm={6} xs={12}>
                     <Card style={{ textAlign: 'center' }}>
                         <CardContent>
                             <Typography variant="h6">
@@ -43,7 +43,7 @@ const ReservationSummary = ({layout}) => {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item sm={6}>
+                <Grid item sm={6} xs={12}>
                     <Card style={{ textAlign: 'center' }}>
                         <CardContent>
                             <Typography variant="h6">
@@ -57,7 +57,7 @@ const ReservationSummary = ({layout}) => {
                 </Grid>
             </Grid>
             <Grid container spacing={3} alignItems="center" justifyContent="center">
-                <Grid item sm={6}>
+                <Grid item sm={6} xs={12}>
                     <Card style={{ textAlign: 'center' }}>
                         <CardContent>
                             <Typography gutterBottom variant="h6">
@@ -69,7 +69,7 @@ const ReservationSummary = ({layout}) => {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item sm={6}>
+                <Grid item sm={6} xs={12}>
                     <Card style={{ textAlign: 'center' }}>
                         <CardContent>
                             <Typography gutterBottom variant="h6">
@@ -83,7 +83,7 @@ const ReservationSummary = ({layout}) => {
                 </Grid>
             </Grid>
             <Grid container spacing={3} alignItems="center" justifyContent="center">
-                <Grid item sm={6}>
+                <Grid item sm={6} xs={12}>
                     <Card style={{ textAlign: 'center' }}>
                         <CardContent>
                             <Typography variant="h6">
@@ -95,7 +95,7 @@ const ReservationSummary = ({layout}) => {
                         </CardContent>
                     </Card>
                 </Grid>
-                <Grid item sm={6}>
+                <Grid item sm={6} xs={12}>
                     <Card style={{ textAlign: 'center' }}>
                         <CardContent>
                             <Typography variant="h6">

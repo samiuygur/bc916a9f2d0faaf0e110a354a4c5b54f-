@@ -93,12 +93,12 @@ export default class PreviewAndPayment extends React.Component {
                                     placeholder="Kart Numarasını Giriniz" />
                             </Grid>
                             <Grid container spacing={5}>
-                                <Grid item sm={6}>
+                                <Grid item sm={6} xs={12}>
                                     <InputMask mask="99/9999" onChange={this.handleInputChange} onFocus={this.handleInputFocus}>
                                         {(inputProps) => <TextField required name="expiry" type="text" id="card-number" label="Kart Son Kullanma Tarihi" className="payment-input" placeholder="Son Kullanma Tarihini Giriniz" />}
                                     </InputMask>
                                 </Grid>
-                                <Grid item sm={6}>
+                                <Grid item sm={6} xs={12}>
                                     <TextField
                                         required
                                         name="cvc"

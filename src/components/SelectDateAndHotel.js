@@ -96,7 +96,7 @@ function SelectDateAndHotel(props) {
         {props.hotels.map((hotel, i) => <MenuItem value={hotel.id} key={i}>{hotel.hotel_name}</MenuItem>)}
       </Select>
       <Grid container spacing={2}>
-        <Grid item xs={3}>
+        <Grid item sm={3} xs={12}>
           <TextField
             id="enterenceDate"
             name="enteranceDate"
@@ -111,7 +111,7 @@ function SelectDateAndHotel(props) {
             }}
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item sm={3} xs={12}>
           <TextField
             id="leaveDate"
             name="leaveDate"
@@ -126,7 +126,7 @@ function SelectDateAndHotel(props) {
             }}
           />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item sm={3} xs={12}>
           <TextField
             id="standard-select-currency"
             select
@@ -143,7 +143,7 @@ function SelectDateAndHotel(props) {
             ))}
           </TextField>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={3}>
           <TextField
             id="standard-select-currency"
             select

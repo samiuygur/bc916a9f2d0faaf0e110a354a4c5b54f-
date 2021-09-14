@@ -104,7 +104,7 @@ function SelectRoomAndView(props) {
                         </Typography>
                       </Grid>
                       <Grid item container xs>
-                        <Grid item sm={8}>
+                        <Grid item xs={8}>
                           <Typography variant="body2" color="textSecondary" component="p">
                             {dayCount} Gün
                           </Typography>
@@ -112,7 +112,7 @@ function SelectRoomAndView(props) {
                             {hotelInfo.adultCount} Yetişkin
                           </Typography>
                         </Grid>
-                        <Grid item sm={4}>
+                        <Grid item xs={4} style={{textAlign: 'right'}}>
                           <Typography variant="h6" component="p">{parseInt(roomType.price)} TL</Typography>
                         </Grid>
                       </Grid>
@@ -149,11 +149,11 @@ function SelectRoomAndView(props) {
                         </Typography>
                       </Grid>
                       <Grid item container xs>
-                        <Grid item sm={10}><Typography variant="body2" color="textSecondary" component="p">
+                        <Grid item sm={8} xs={12}><Typography variant="body2" color="textSecondary" component="p">
                           Fiyata Etki Oranı
                         </Typography>
                         </Grid>
-                        <Grid item sm={2} style={{ textAlign: 'right' }}>
+                        <Grid item sm={4} xs={12} style={{ textAlign: 'right' }}>
                           <Typography variant="body1" color="primary" component="p">% {room.price_rate}</Typography>
                         </Grid>
                       </Grid>
